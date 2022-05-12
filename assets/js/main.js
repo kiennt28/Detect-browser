@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("lon").textContent = data.ip_info.lng;
     document.getElementById("zone").textContent = data.time_info.zone;
     document.getElementById("local-time").textContent = data.time_info.local;
-
+    document.title = data.ip_info.ip;
     // if (responses.ip_info.hasOwnProperty("ip")) {
     //   document
     //     .querySelector(".card__data_webrtc .webrtc-status-icon")
