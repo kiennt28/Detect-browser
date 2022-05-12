@@ -366,8 +366,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("browser").textContent = browserName;
   document.getElementById("vBrowser").textContent = fullVersion;
   document.getElementById("javaScript").textContent = navigator.userAgent;
-  document.getElementById("platform").textContent =
-    navigator.userAgentData.platform;
+  // document.getElementById("platform").textContent =
+  //   navigator.userAgentData.platform;
   // document.write(
   //   "" +
   //     "Browser name  = " +
