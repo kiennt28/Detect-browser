@@ -10,6 +10,9 @@ body {
     font-size: 16px;
     line-height: 30px;
 } */
+.section_ip-check {
+    padding-top: 30px;
+}
 .card__col.card__col_value {
     padding-left: 20px;
 }

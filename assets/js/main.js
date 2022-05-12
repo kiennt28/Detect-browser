@@ -313,11 +313,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   var nVer = navigator.appVersion;
   var nAgt = navigator.userAgent;
-  var nAgtData = navigator.userAgentData.platform;
   var browserName = navigator.appName;
   var fullVersion = "" + parseFloat(navigator.appVersion);
   var nameOffset, verOffset, ix;
-
+  // console.log(nAgtData);
   // In Opera, the true version is after "Opera" or after "Version"
   if ((verOffset = nAgt.indexOf("Opera")) != -1) {
     browserName = "Opera";
@@ -365,9 +364,10 @@ document.addEventListener("DOMContentLoaded", () => {
     fullVersion = fullVersion.substring(0, ix);
 
   document.getElementById("browser").textContent = browserName;
-  document.getElementById("platform").textContent = nAgtData;
   document.getElementById("vBrowser").textContent = fullVersion;
   document.getElementById("javaScript").textContent = navigator.userAgent;
+  document.getElementById("platform").textContent =
+    navigator.userAgentData.platform;
   // document.write(
   //   "" +
   //     "Browser name  = " +
