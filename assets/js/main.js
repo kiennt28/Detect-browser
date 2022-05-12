@@ -366,8 +366,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("browser").textContent = browserName;
   document.getElementById("vBrowser").textContent = fullVersion;
   document.getElementById("javaScript").textContent = navigator.userAgent;
-  // document.getElementById("platform").textContent =
-  //   navigator.userAgentData.platform;
+  document.getElementById("platform").textContent =
+    navigator.userAgentData.platform;
   // document.write(
   //   "" +
   //     "Browser name  = " +
@@ -380,23 +380,4 @@ document.addEventListener("DOMContentLoaded", () => {
   //     navigator.userAgent +
   //     "<br>"
   // );
-  function checkOS(n) {
-    if (n.userAgentData) {
-      const hints = [
-        "architecture",
-        "model",
-        "platform",
-        "platformVersion",
-        "uaFullVersion",
-      ];
-      n.userAgentData.getHighEntropyValues(hints).then((ua) => {
-        console.log(ua);
-      });
-    } else {
-      console.log(n.userAgent);
-      return "navigator.userAgentData is not supported!";
-    }
-  }
-
-  checkOS(navigator);
 });
