@@ -1,0 +1,89 @@
+body {
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+/* .card__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 16px;
+    line-height: 30px;
+} */
+.card__col.card__col_value {
+    padding-left: 20px;
+}
+.ip-check__card {
+    padding: 35px 16px 28px 115px;
+    margin-bottom: 30px;
+    min-height: 120px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.ip-check__card .card__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.ip-check__card .lang {
+    margin-right: 50px;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+.ip-check__card .card__data .card__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 16px;
+    line-height: 30px;
+}
+.ip-check__card .card__data .card__row .card__col {
+    overflow: hidden;
+    position: relative;
+    padding-right: 26px;
+}
+.ip-check__card .card__data .card__row .card__col.card__col_param {
+    width: 140px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 300;
+    color:#32CD32;
+}
+.ip-check__card .card__data .card__row .card__col.card__col_value {
+    width: 100%;
+    flex-shrink: 2;
+    color: #000;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: transparent;
+}
+.ip-check__card .card__data.card__data_with-overflow .card__col:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    background-image: linear-gradient(to right,rgba(255,255,255,0),white,white);
+}
+.enabled-status {
+    width: 8px;
+    height: 8px;
+    background-color: #e8504f;
+    border-radius: 4px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.enabled-status:not(.disabled) {
+    background-color: #1fb74c;
+}
+.enabled-status__wrapper{
+    display: flex;
+    align-items: center;
+}
+.ip-check__card .enabled-status__wrapper .cont:not(.enabled-status) {
+    margin-left: 10px;
+}
