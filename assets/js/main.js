@@ -380,23 +380,23 @@ document.addEventListener("DOMContentLoaded", () => {
   //     navigator.userAgent +
   //     "<br>"
   // );
-  function checkOS(n) {
-    if (n.userAgentData) {
-      const hints = [
-        "architecture",
-        "model",
-        "platform",
-        "platformVersion",
-        "uaFullVersion",
-      ];
-      n.userAgentData.getHighEntropyValues(hints).then((ua) => {
-        console.log(ua);
-      });
-    } else {
-      console.log(n.userAgent);
-      return "navigator.userAgentData is not supported!";
-    }
-  }
+  // function checkOS(n) {
+  //   if (n.userAgentData) {
+  //     const hints = [
+  //       "architecture",
+  //       "model",
+  //       "platform",
+  //       "platformVersion",
+  //       "uaFullVersion",
+  //     ];
+  //     n.userAgentData.getHighEntropyValues(hints).then((ua) => {
+  //       console.log(ua);
+  //     });
+  //   } else {
+  //     console.log(n.userAgent);
+  //     return "navigator.userAgentData is not supported!";
+  //   }
+  // }
 
-  checkOS(navigator);
+  // checkOS(navigator);
 });
