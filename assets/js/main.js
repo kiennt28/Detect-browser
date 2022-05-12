@@ -59,29 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
   async function getLocation() {
     const response = await fetch(api_url);
     const data = await response.json();
-    // const {
-    //   ip,
-    //   continent,
-    //   district,
-    //   city,
-    //   ip_range,
-    //   ips,
-    //   as_number,
-    //   lat,
-    //   lng,
-    // } = data.ip_info;
+
     var responses = data;
-    // const { zone, local } = data.time_info;
+
     if (responses.ip_info.hasOwnProperty("district")) {
       document.querySelector("#district").textContent = data.ip_info.district;
-      console.log(data.ip_info.district);
     } else {
-      console.log(1);
       document.querySelector("#districts").remove();
     }
     document.getElementById("ip").textContent = data.ip_info.ip;
     document.getElementById("continent").textContent = data.ip_info.continent;
-    // document.getElementById("district").textContent = data.ip_info.district;
+
     document.getElementById("city").textContent = data.ip_info.city;
     document.getElementById("ip_range").textContent = data.ip_info.ip_range;
     document.getElementById("isp").textContent = data.ip_info.ips;
@@ -91,18 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("zone").textContent = data.time_info.zone;
     document.getElementById("local-time").textContent = data.time_info.local;
     document.title = data.ip_info.ip;
-    // if (responses.ip_info.hasOwnProperty("ip")) {
-    //   document
-    //     .querySelector(".card__data_webrtc .webrtc-status-icon")
-    //     .classList.remove("disabled");
-    //   document.querySelector(".card__data_webrtc .cont").textContent =
-    //     data.ip_info.ip;
-    // } else {
-    //   document
-    //     .querySelector(".card__data_webrtc .webrtc-status-icon")
-    //     .classList.add("disabled");
-    //   document.querySelector(".card__data_webrtc .cont").textContent = "";
-    // }
+
     const localTime = document.getElementById("local-time").textContent;
     document.getElementById("local-time").textContent = new Date(localTime);
   }
@@ -144,7 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelector(".card__data_webrtc .webrtc-status-icon")
         .classList.remove("disabled");
       document.querySelector(".card__data_webrtc .cont").textContent = ip;
-      console.log(ip);
     } else {
       document
         .querySelector(".card__data_webrtc .webrtc-status-icon")
@@ -175,26 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  // const localTime = document.getElementById("local-time").textContent;
-  // document.getElementById("local-time").textContent = new Date(localTime);
+
   document.getElementById("system-time").textContent = new Date();
-  // let c_Depth = screen.colorDepth;
-  // let p_Depth = screen.pixelDepth;
-  // let height = screen.height;
-  // let width = screen.width;
-  // let a_Height = screen.availHeight;
-  // let a_Width = screen.availWidth;
-  // let a_Top = screen.availTop;
-  // let a_Left = screen.availLeft;
-  // document.getElementById("colorDepth").innerHTML = c_Depth;
-  // document.getElementById("pixelDepth").innerHTML = p_Depth;
-  // document.getElementById("height").innerHTML = height;
-  // document.getElementById("width").innerHTML = width;
-  // document.getElementById("availHeight").innerHTML = a_Height;
-  // document.getElementById("availWidth").innerHTML = a_Width;
-  // document.getElementById("availTop").innerHTML = a_Top;
-  // document.getElementById("availLeft").innerHTML = a_Left;
-  // document.getElementById("screenSize").innerHTML = getWindowSize();
 
   if (navigator) {
     const navFieldsArr = [
@@ -281,12 +239,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // var java = navigator.javaEnabled();
-  // if (java) {
-  //   console.log(java);
-  //   setStatus("#java-status");
-  // }
-
   let activeX = false;
   let flash = false;
 
@@ -316,7 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
   var browserName = navigator.appName;
   var fullVersion = "" + parseFloat(navigator.appVersion);
   var nameOffset, verOffset, ix;
-  // console.log(nAgtData);
   // In Opera, the true version is after "Opera" or after "Version"
   if ((verOffset = nAgt.indexOf("Opera")) != -1) {
     browserName = "Opera";
@@ -368,16 +319,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("javaScript").textContent = navigator.userAgent;
   document.getElementById("platform").textContent =
     navigator.userAgentData.platform;
-  // document.write(
-  //   "" +
-  //     "Browser name  = " +
-  //     browserName +
-  //     "<br>" +
-  //     "Full version  = " +
-  //     fullVersion +
-  //     "<br>" +
-  //     "navigator.userAgent = " +
-  //     navigator.userAgent +
-  //     "<br>"
-  // );
 });
