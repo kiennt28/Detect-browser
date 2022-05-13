@@ -17,7 +17,7 @@ body {
     padding-left: 20px;
 }
 .ip-check__card {
-    padding: 35px 16px 28px 115px;
+    padding: 35px 16px 28px 50px;
     margin-bottom: 30px;
     min-height: 120px;
     position: relative;
@@ -49,7 +49,7 @@ body {
     padding-right: 26px;
 }
 .ip-check__card .card__data .card__row .card__col.card__col_param {
-    width: 140px;
+    width: 190px;
     white-space: nowrap;
     flex-shrink: 0;
     font-weight: 300;
