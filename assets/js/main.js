@@ -54,10 +54,28 @@ document.addEventListener("DOMContentLoaded", () => {
       candidateLines.forEach((line) => handleCandidate(line));
     }, 1000);
   };
-
-  const api_url = "https://api.multibrowser.io/v1/iplocation";
+  async function getAddress() {
+    const location_data = await getLocation();
+    const response = await fetch(
+      "https://api.multibrowser.io/v1/detech-location" +
+        `?lat=${location_data.ip_info.lat}&lng=${location_data.ip_info.lng}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.length > 0) {
+          const a = data[data.length - 1];
+          document.getElementById("address").textContent = a;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  getAddress();
   async function getLocation() {
+    const api_url = "https://api.multibrowser.io/v1/iplocation";
     const response = await fetch(api_url);
+
     const data = await response.json();
 
     var responses = data;
@@ -67,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       document.querySelector("#districts").remove();
     }
-    document.getElementById("ip").textContent = data.ip_info.ip;
+    document.querySelector("#ip").textContent = data.ip_info.ip;
     document.getElementById("continent").textContent = data.ip_info.continent;
 
     document.getElementById("city").textContent = data.ip_info.city;
@@ -82,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const localTime = document.getElementById("local-time").textContent;
     document.getElementById("local-time").textContent = new Date(localTime);
+    return data;
   }
-  getLocation();
 
   document.querySelectorAll("#javascript-status span").forEach((node) => {
     node.style.display = "block";
