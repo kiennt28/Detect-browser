@@ -62,12 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        if (data.length > 0 && data[0] == "false") {
+        if (data.length > 0) {
           const a = data[data.length - 1];
-          console.log(data);
-          document.getElementById("address").textContent = "";
-        } else {
-          document.getElementById("address").textContent = a;
+          if (data[0] == "false") {
+            document.getElementById("address").textContent = "";
+          } else {
+            document.getElementById("address").textContent = a;
+          }
         }
       })
       .catch((err) => {
