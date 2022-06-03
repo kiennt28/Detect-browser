@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   async function getAddress() {
     const location_data = await getLocation();
+    console.log(location_data);
     const response = await fetch(
       "https://api.multibrowser.io/v1/detech-location" +
         `?lat=${location_data.ip_info.lat}&lng=${location_data.ip_info.lng}`
@@ -85,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
   async function getLocation() {
     const api_url = "https://api.multibrowser.io/v1/iplocation";
     const response = await fetch(api_url);
-
     const data = await response.json();
 
     var responses = data;

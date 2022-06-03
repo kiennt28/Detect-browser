@@ -1,5 +1,5 @@
 body {
-    background-color: #f9f9f9;
+    background-color: #02274d;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
 }
@@ -10,6 +10,9 @@ body {
     font-size: 16px;
     line-height: 30px;
 } */
+ins.adsbygoogle[data-ad-status="unfilled"] {
+    display:none !important;
+} 
 .section_ip-check {
     padding-top: 30px;
 }
