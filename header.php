@@ -42,7 +42,7 @@ $api_result = json_decode($json, true);
 // foreach($api_result as &$value) {
 //   var_dump($value);
 // }
-// var_dump($api_result);
+var_dump($api_result);
 // echo $api_result['location']['calling_code'];
 ?>
 
