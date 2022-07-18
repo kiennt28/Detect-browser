@@ -18,7 +18,7 @@ function get_client_ip()
     $ipaddress = $_SERVER['REMOTE_ADDR'];
   else
     $ipaddress = 'UNKNOWN';
-  // var_dump("kien",$ipaddress);
+  var_dump("kien", $ipaddress);
   return $ipaddress;
 }
 get_client_ip()
