@@ -24,7 +24,7 @@ function get_client_ip()
 get_client_ip()
 ?>
 <?php
-$ip = '161.185.160.93';
+$ip = $ipaddress;
 $access_key = '25638c1c5776d5e6d02e64fdedc6a699';
 
 // Initialize CURL:
