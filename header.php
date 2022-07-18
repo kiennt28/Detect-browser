@@ -18,13 +18,14 @@ function get_client_ip()
     $ipaddress = $_SERVER['REMOTE_ADDR'];
   else
     $ipaddress = 'UNKNOWN';
-  var_dump("kien", $ipaddress);
+  // var_dump("kien", $ipaddress);
   return $ipaddress;
 }
 get_client_ip()
 ?>
 <?php
-$ip = $ipaddress;
+$ip = get_client_ip();
+// var_dump("Check ip123123",$ip);
 $access_key = '25638c1c5776d5e6d02e64fdedc6a699';
 
 // Initialize CURL:
@@ -42,7 +43,7 @@ $api_result = json_decode($json, true);
 // foreach($api_result as &$value) {
 //   var_dump($value);
 // }
-var_dump($api_result);
+// var_dump($api_result);
 // echo $api_result['location']['calling_code'];
 ?>
 
