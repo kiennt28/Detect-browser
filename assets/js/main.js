@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    pc.onicecandidateerror = (err) => {}; // eslint-disable-line
+    pc.onicecandidateerror = (err) => { }; // eslint-disable-line
 
     // create a bogus data channel
     pc.createDataChannel("");
@@ -54,12 +54,25 @@ document.addEventListener("DOMContentLoaded", () => {
       candidateLines.forEach((line) => handleCandidate(line));
     }, 1000);
   };
+  async function getData() {
+    const location_datas = await getLocation();
+    console.log(location_datas)
+    const datas = await fetch(
+      "https://api.positionstack.com/v1/reverse?access_key=9ca7107d3e6d368bfd30943a02453749&query=" +
+      `${location_datas.ip_info.lat},${location_datas.ip_info.lng}`
+    )
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+  }
+  // console.log(data)
+  getData()
+
   async function getAddress() {
     const location_data = await getLocation();
     console.log(location_data);
     const response = await fetch(
       "https://api.multibrowser.io/v1/detech-location" +
-        `?lat=${location_data.ip_info.lat}&lng=${location_data.ip_info.lng}`
+      `?lat=${location_data.ip_info.lat}&lng=${location_data.ip_info.lng}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -87,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const api_url = "https://api.multibrowser.io/v1/iplocation";
     const response = await fetch(api_url);
     const data = await response.json();
+    console.log(data)
 
     var responses = data;
 

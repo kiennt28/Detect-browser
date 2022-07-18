@@ -1,5 +1,6 @@
 body {
     background-color: #02274d;
+    /* background-color: #fff; */
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
 }
@@ -13,6 +14,13 @@ body {
 ins.adsbygoogle[data-ad-status="unfilled"] {
     display:none !important;
 } 
+.nav .nav-item > a {
+    transition: color 0.15s ease-in-out;
+    color: #fff;
+}
+.nav .nav-item > a:hover {
+    color: red;
+}
 .section_ip-check {
     padding-top: 30px;
 }

@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.ico" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-839S1HBPR5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-839S1HBPR5');
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4989876936770363"
-    crossorigin="anonymous"></script>
-</head>
-
-<body>
+<?php include('header.php') ?>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4989876936770363"
     crossorigin="anonymous"></script>
   <!-- Ads Banner 1 -->
@@ -41,6 +15,10 @@
         </div>
       </div>
     </section> -->
+  <div class="mt-2 text-center">
+    <a href="https://www.justhost.com/track/tuyetmai/" target="_blank"> <img border="0"
+        src="https://justhost-cdn.com/media/partner/images/tuyetmai/760x80/jh-ppc-banners-dynamic-760x80.png"> </a>
+  </div>
   <div class="section section_ip-check">
     <div class="container">
       <div class="row">
@@ -53,63 +31,99 @@
                   <div class="card__row">
                     <div class="card__col card__col_param">IP:</div>
                     <div class="card__col card__col_value">
-                      <span id="ip"></span>
+                      <span id="ip"><?php echo $api_result['ip'] ?></span>
                     </div>
                   </div>
                   <div class="card__row">
-                    <div class="card__col card__col_param">Continent:</div>
+                    <div class="card__col card__col_param">Type:</div>
                     <div class="card__col card__col_value">
-                      <span id="continent"></span>
+                      <span id="type"><?php echo $api_result['type'] ?></span>
                     </div>
                   </div>
-                  <div class="card__row" id="districts">
-                    <div class="card__col card__col_param">District:</div>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Continent Code:</div>
                     <div class="card__col card__col_value">
-                      <span id="district"></span>
+                      <span id="continent_code"><?php echo $api_result['continent_code'] ?></span>
+                    </div>
+                  </div>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Continent Name:</div>
+                    <div class="card__col card__col_value">
+                      <span id="continent_code"><?php echo $api_result['continent_name'] ?></span>
+                    </div>
+                  </div>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Country Code:</div>
+                    <div class="card__col card__col_value">
+                      <span id="country_code"><?php echo $api_result['country_code'] ?></span>
+                    </div>
+                  </div>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Country Name:</div>
+                    <div class="card__col card__col_value">
+                      <span id="country_name"><?php echo $api_result['country_name'] ?></span>
+                    </div>
+                  </div>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Region Code:</div>
+                    <div class="card__col card__col_value">
+                      <span id="region_code"><?php echo $api_result['region_code'] ?></span>
+                    </div>
+                  </div>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Region Name:</div>
+                    <div class="card__col card__col_value">
+                      <span id="region_name"><?php echo $api_result['region_name'] ?></span>
+                    </div>
+                  </div>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Zip:</div>
+                    <div class="card__col card__col_value">
+                      <span id="zip"><?php echo $api_result['zip'] ?></span>
                     </div>
                   </div>
                   <div class="card__row">
                     <div class="card__col card__col_param">City:</div>
                     <div class="card__col card__col_value">
-                      <span id="city"></span>
+                      <span id="city"><?php echo $api_result['city'] ?></span>
                     </div>
                   </div>
                   <div class="card__row">
-                    <div class="card__col card__col_param">IP range:</div>
+                    <div class="card__col card__col_param">Capital:</div>
                     <div class="card__col card__col_value">
-                      <span id="ip_range"></span>
+                      <span id="capital"><?php echo $api_result['location']['capital'] ?></span>
                     </div>
                   </div>
                   <div class="card__row">
-                    <div class="card__col card__col_param">ISP:</div>
+                    <div class="card__col card__col_param">Geoname:</div>
                     <div class="card__col card__col_value">
-                      <span id="isp"></span>
+                      <span id="geoname_id"><?php echo $api_result['location']['geoname_id'] ?></span>
                     </div>
                   </div>
                   <div class="card__row">
-                    <div class="card__col card__col_param">AS Number:</div>
+                    <div class="card__col card__col_param">Calling_code:</div>
                     <div class="card__col card__col_value">
-                      <span id="as_number"></span>
+                      <span id="calling_code"><?php echo $api_result['location']['calling_code'] ?></span>
                     </div>
                   </div>
                   <div class="card__row">
                     <div class="card__col card__col_param">Latitude:</div>
                     <div class="card__col card__col_value">
-                      <span id="lat"></span>
+                      <span id="lat"><?php echo $api_result['latitude'] ?></span>
                     </div>
                   </div>
                   <div class="card__row">
                     <div class="card__col card__col_param">Longitude</div>
                     <div class="card__col card__col_value">
-                      <span id="lon"></span>
+                      <span id="lon"><?php echo $api_result['longitude']?></span>
                     </div>
                   </div>
-                  <div class="card__row">
+                  <!-- <div class="card__row">
                     <div class="card__col card__col_param">Address:</div>
                     <div class="card__col card__col_value">
                       <span id="address"></span>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -348,13 +362,13 @@
                   <div class="card__row">
                     <div class="card__col card__col_param">Zone:</div>
                     <div class="card__col card__col_value">
-                      <span id="zone"></span>
+                      <span id="time_zone"><?php echo $api_result['time_zone']['id'] ?></span>
                     </div>
                   </div>
                   <div class="card__row">
                     <div class="card__col card__col_param">Local:</div>
                     <div class="card__col card__col_value">
-                      <span id="local-time"></span>
+                      <span id="current_time"><?php echo $api_result['time_zone']['current_time'] ?></span>
                     </div>
                   </div>
                   <div class="card__row">
@@ -450,9 +464,9 @@
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
-  <script src="/assets/js/lib/cryptojs.js"></script>
-  <script src="/assets/js/webgl.js"></script>
-  <script src="/assets/js/main.js"></script>
+  <script src="assets/js/lib/cryptojs.js"></script>
+  <script src="assets/js/webgl.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
