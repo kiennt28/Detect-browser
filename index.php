@@ -31,7 +31,7 @@
                   <div class="card__row">
                     <div class="card__col card__col_param">IP:</div>
                     <div class="card__col card__col_value">
-                      <span id="ip"><?php echo $api_result['ip'] ?></span>
+                      <span id="ip"><?php var_dump($api_result['ip']) ?></span>
                     </div>
                   </div>
                   <div class="card__row">
