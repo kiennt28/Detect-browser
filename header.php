@@ -29,7 +29,8 @@ $ip = get_client_ip();
 $access_key = '25638c1c5776d5e6d02e64fdedc6a699';
 
 // Initialize CURL:
-$ch = curl_init('https://api.ipapi.com/' . $ip . '?access_key=' . $access_key . '');
+// $ch = curl_init('https://api.ipapi.com/' . $ip . '?access_key=' . $access_key . '');
+$ch = curl_init('https://v2-api.multibrowser.io/v1/geoip?ip=' . $ip);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 // Store the data:
@@ -38,7 +39,6 @@ curl_close($ch);
 
 // Decode JSON response:
 $api_result = json_decode($json, true);
-
 // Output the "calling_code" object inside "location"
 // foreach($api_result as &$value) {
 //   var_dump($value);

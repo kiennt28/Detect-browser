@@ -28,93 +28,205 @@
                 <div class="card__row">
                   <div class="card__col card__col_param">IP:</div>
                   <div class="card__col card__col_value">
-                    <span id="ip"><?php echo $api_result['ip'] ?></span>
+                    <span id="ip">
+                      <?php if (isset($api_result['ip'])) {
+                        echo $api_result['ip'];
+                      } else {
+                        echo "Null";
+                      }
+                      ?>
+                    </span>
                   </div>
                 </div>
                 <div class="card__row">
+                  <div class="card__col card__col_param">Hostname:</div>
+                  <div class="card__col card__col_value">
+                    <span id="ip">
+                      <?php if (isset($api_result['host_name'])) {
+                        echo $api_result['host_name'];
+                      } else {
+                        echo "Null";
+                      }
+                      ?>
+                    </span>
+                  </div>
+                </div>
+                <div class="card__row">
+                  <div class="card__col card__col_param">Ip Range:</div>
+                  <div class="card__col card__col_value">
+                    <span id="ip">
+                      <?php if (isset($api_result['ip_range'])) {
+                        echo $api_result['ip_range'];
+                      } else {
+                        echo "Null";
+                      }
+                      ?>
+                    </span>
+                  </div>
+                </div>
+                <?php if (isset($api_result['type'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Type:</div>
+                    <div class="card__col card__col_value">
+                      <span id="type">
+                        <?php echo $api_result['type']; ?>
+                      </span>
+                    </div>
+                  </div>
+                <?php } ?>
+                <?php if (isset($api_result['isp'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">ISP:</div>
+                    <div class="card__col card__col_value">
+                      <span id="ip">
+                        <?php echo $api_result['isp']; ?>
+                      </span>
+                    </div>
+                  </div>
+                <?php } ?>
+                <!-- <div class="card__row">
                   <div class="card__col card__col_param">Type:</div>
                   <div class="card__col card__col_value">
-                    <span id="type"><?php echo $api_result['type'] ?></span>
+                    <span id="type">
+                      <?php if (isset($api_result['type'])) {
+                        echo $api_result['type'];
+                      } else {
+                        echo "Null";
+                      }
+                      ?>
+                    </span>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Continent Code:</div>
-                  <div class="card__col card__col_value">
-                    <span id="continent_code"><?php echo $api_result['continent_code'] ?></span>
+                </div> -->
+                <?php if (isset($api_result['continent_code'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Continent Code:</div>
+                    <div class="card__col card__col_value">
+                      <span id="continent_code">
+                        <?php echo $api_result['continent_code']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Continent Name:</div>
-                  <div class="card__col card__col_value">
-                    <span id="continent_code"><?php echo $api_result['continent_name'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['continent_name'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Continent Name:</div>
+                    <div class="card__col card__col_value">
+                      <span id="continent_name">
+                        <?php echo $api_result['continent_name']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Country Code:</div>
-                  <div class="card__col card__col_value">
-                    <span id="country_code"><?php echo $api_result['country_code'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['country_code'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Country Code:</div>
+                    <div class="card__col card__col_value">
+                      <span id="country_code">
+                        <?php echo $api_result['country_code']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Country Name:</div>
-                  <div class="card__col card__col_value">
-                    <span id="country_name"><?php echo $api_result['country_name'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['country'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Country Name:</div>
+                    <div class="card__col card__col_value">
+                      <span id="country_name">
+                        <?php echo $api_result['country']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Region Code:</div>
-                  <div class="card__col card__col_value">
-                    <span id="region_code"><?php echo $api_result['region_code'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['region_code'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Region Code:</div>
+                    <div class="card__col card__col_value">
+                      <span id="region_code">
+                        <?php echo $api_result['region_code']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Region Name:</div>
-                  <div class="card__col card__col_value">
-                    <span id="region_name"><?php echo $api_result['region_name'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['region'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Region Name:</div>
+                    <div class="card__col card__col_value">
+                      <span id="region_name">
+                        <?php echo $api_result['region']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Zip:</div>
-                  <div class="card__col card__col_value">
-                    <span id="zip"><?php echo $api_result['zip'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['zip'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Zip:</div>
+                    <div class="card__col card__col_value">
+                      <span id="zip">
+                        <?php echo $api_result['zip']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">City:</div>
-                  <div class="card__col card__col_value">
-                    <span id="city"><?php echo $api_result['city'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['city'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">City:</div>
+                    <div class="card__col card__col_value">
+                      <span id="city">
+                        <?php echo $api_result['city']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Capital:</div>
-                  <div class="card__col card__col_value">
-                    <span id="capital"><?php echo $api_result['location']['capital'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['location']['capital'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Capital:</div>
+                    <div class="card__col card__col_value">
+                      <span id="capital">
+                        <?php echo $api_result['location']['capital']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Geoname:</div>
-                  <div class="card__col card__col_value">
-                    <span id="geoname_id"><?php echo $api_result['location']['geoname_id'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['location']['geoname_id'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Geoname:</div>
+                    <div class="card__col card__col_value">
+                      <span id="geoname_id">
+                        <?php echo $api_result['location']['geoname_id']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Calling_code:</div>
-                  <div class="card__col card__col_value">
-                    <span id="calling_code"><?php echo $api_result['location']['calling_code'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['location']['calling_code'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Calling_code:</div>
+                    <div class="card__col card__col_value">
+                      <span id="calling_code">
+                        <?php echo $api_result['location']['calling_code']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Latitude:</div>
-                  <div class="card__col card__col_value">
-                    <span id="lat"><?php echo $api_result['latitude'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['lat'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Latitude:</div>
+                    <div class="card__col card__col_value">
+                      <span id="lat">
+                        <?php echo $api_result['lat']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div class="card__row">
-                  <div class="card__col card__col_param">Longitude</div>
-                  <div class="card__col card__col_value">
-                    <span id="lon"><?php echo $api_result['longitude'] ?></span>
+                <?php } ?>
+                <?php if (isset($api_result['lng'])) { ?>
+                  <div class="card__row">
+                    <div class="card__col card__col_param">Longitude</div>
+                    <div class="card__col card__col_value">
+                      <span id="lon">
+                        <?php echo $api_result['lng']; ?>
+                      </span>
+                    </div>
                   </div>
-                </div>
+                <?php } ?>
                 <!-- <div class="card__row">
                     <div class="card__col card__col_param">Address:</div>
                     <div class="card__col card__col_value">
@@ -359,13 +471,24 @@
                 <div class="card__row">
                   <div class="card__col card__col_param">Zone:</div>
                   <div class="card__col card__col_value">
-                    <span id="time_zone"><?php echo $api_result['time_zone']['id'] ?></span>
+                    <span id="time_zone">
+                      <?php if (isset($api_result['time_zone'])) {
+                        echo $api_result['time_zone'];
+                      } else {
+                        echo "Null";
+                      } ?>
+                    </span>
                   </div>
                 </div>
                 <div class="card__row">
                   <div class="card__col card__col_param">Local:</div>
                   <div class="card__col card__col_value">
-                    <span id="current_time"><?php echo $api_result['time_zone']['current_time'] ?></span>
+                    <span id="current_time">
+                      <?php if (isset($api_result['local_time'])) {
+                        echo $api_result['local_time'];
+                      } else {
+                        echo "Null";
+                      } ?></span>
                   </div>
                 </div>
                 <div class="card__row">
